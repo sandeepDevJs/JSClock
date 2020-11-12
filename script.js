@@ -8,7 +8,10 @@ let secondDigit1 = document.querySelector(".seconds .first");
 let secondDigit2 = document.querySelector(".seconds .second");
 
 let reminderBtn = document.getElementById("btn");
+
+//User's  Time & Custom Message
 let remindTime, message;
+//is remider is set.
 let weReminding = false;
 
 reminderBtn.addEventListener("click", () => {
@@ -70,6 +73,7 @@ function updateSeconds(){
         updateMinutes();
     }
 
+    //if reminder is set
     if(weReminding){
         let currentTime = date.getHours()+":"+date.getMinutes();
         if (remindTime == currentTime) {
