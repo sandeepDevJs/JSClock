@@ -7,6 +7,7 @@ let minutesDigit2 = document.querySelector(".minutes .second");
 let secondDigit1 = document.querySelector(".seconds .first");
 let secondDigit2 = document.querySelector(".seconds .second");
 
+//Writing Time on First Load.
 updateMinutes();
 updateSeconds();
 
@@ -30,7 +31,7 @@ function updateMinutes() {
         minutesDigit1.textContent = date.getMinutes().toString()[0];
         minutesDigit2.textContent = date.getMinutes().toString()[1];
     }
-    
+
     
     updateHours();
 }
