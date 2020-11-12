@@ -7,9 +7,29 @@ let minutesDigit2 = document.querySelector(".minutes .second");
 let secondDigit1 = document.querySelector(".seconds .first");
 let secondDigit2 = document.querySelector(".seconds .second");
 
+let reminderBtn = document.getElementById("btn");
+let remindTime, message;
+let weReminding = false;
+
+reminderBtn.addEventListener("click", () => {
+    remindTime = document.getElementById("userInput").value.toString().trim();
+    if (weReminding) {
+        alert("Reminder is already been set.");   
+        return false;
+    }
+    if (!remindTime) {
+        alert("No Input Was Given.");
+        return false;
+    }
+    message = prompt("Enter A Message To Remind With.").trim();
+    weReminding = true;
+})
+
 //Writing Time on First Load.
 updateMinutes();
 updateSeconds();
+
+
 
 function updateHours() {
     let date = new Date();
@@ -48,6 +68,14 @@ function updateSeconds(){
     
     if (parseInt(date.getSeconds()) === 0) {
         updateMinutes();
+    }
+
+    if(weReminding){
+        let currentTime = date.getHours()+":"+date.getMinutes();
+        if (remindTime == currentTime) {
+            alert(message);
+            weReminding = false;
+        }
     }
 
 }

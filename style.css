@@ -11,9 +11,23 @@
   
   body {
     background: black;
+  }
+
+  .clock-container{
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  footer{
+    display: block;
+    position: relative;
+  }
+
+  footer input, footer button{
+    margin:10px;
+    position: relative;
+    left: 43%;
   }
   
   .clock {
