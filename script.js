@@ -31,6 +31,7 @@ function updateMinutes() {
         minutesDigit2.textContent = date.getMinutes().toString()[1];
     }
     
+    
     updateHours();
 }
 
